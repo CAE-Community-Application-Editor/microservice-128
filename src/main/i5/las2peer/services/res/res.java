@@ -117,17 +117,20 @@ public class res extends RESTService {
     boolean response_condition = true;
     if(response_condition) {
       JSONObject json = new JSONObject();
- 
-        json.put("name", "student");
 
         JSONArray array = new JSONArray();
         JSONObject item = new JSONObject();
-        item.put("information", "test");
-        item.put("id", 3);
-        item.put("name", "course1");
-        array.add(item);
+        item.put("id", 1);
+        item.put("title", "My Heart Will Go On");
+        item.put("artist", "Celine Dion");
+        array.add(item); 
+        JSONObject item2 = new JSONObject();
+        item2.put("id", 2);
+        item2.put("title", "First Love");
+        item2.put("artist", "Utada Hikaru");
+        array.add(item2);
         
-        json.put("course", array);
+        json.put("songs", array);
 
       return Response.status(HttpURLConnection.HTTP_OK).entity(json.toJSONString()).build(); 
     }
